@@ -10,6 +10,89 @@ function normalizarTexto(txt) {
 }
 
 // =========================================================
+//LISTAGEM DE MEDICAMENTOS POR CATEGORIA
+//==========================================================
+const medicamentosParaAte180Dias = [
+  // Anticonvulsivantes
+  "acido valproico",
+  "carbamazepina",
+  "divalproato de sodio",
+  "etossuximida",
+  "fenitoina",
+  "fenobarbital",
+  "gabapentina",
+  "lacosamida",
+  "lamotrigina",
+  "levetiracetam",
+  "oxcarbazepina",
+  "pregabalina",
+  "primidona",
+  "topiramato",
+  "vigabatrina",
+  "carbonato de litio",
+  // Antiparkinsonianos
+  "amantadina",
+  "biperideno",
+  "carbidopa",
+  "levodopa",
+  "entacapona",
+  "perglolina",
+  "pramipexol",
+  "rasagilina",
+  "selegilina",
+  "tolcapone"
+];
+
+const antibioticos = [
+  "amoxicilina",
+  "azitromicina",
+  "cefalexina",
+  "ciprofloxacino",
+  "claritromicina",
+  "clindamicina",
+  "doxiciclina",
+  "eritromicina",
+  "flucloxacilina",
+  "levofloxacino",
+  "metronidazol",
+  "norfloxacino",
+  "penicilina",
+  "sulfametoxazol + trimetoprima",
+  "bactrim",
+  "tetraciclina",
+  "amoxicilina + clavulanato"
+];
+
+const psicotropicos = [
+  "escitalopram",
+  "fluoxetina",
+  "sertralina",
+  "paroxetina",
+  "citalopram",
+  "venlafaxina",
+  "duloxetina",
+  "bupropiona",
+  "mirtazapina",
+  "amitriptilina",
+  "nortriptilina",
+  "clomipramina",
+  "imipramina",
+  "trazodona",
+  "agomelatina",
+  "olanzapina",
+  "quetiapina",
+  "risperidona",
+  "ziprasidona",
+  "aripiprazol",
+  "clozapina",
+  "haloperidol",
+  "lurasidona",
+  "paliperidona",
+  "sertindol",
+  "zuclopentixol"
+];
+
+// =========================================================
 // TABELA + FUNÇÃO PARA CÁLCULO DE GOTAS → mL
 // =========================================================
 function calcularGotas(medicamento, gotasPorDia, dias) {
@@ -241,6 +324,7 @@ function calcular() {
 
   resultado.innerHTML = `
     🧑🏻‍⚕️ Médico estipulou <strong>${dias}</strong> dias.<br>
-    Total: <strong>${totalDispensar}</strong> comprimidos.
+    Total: <strong>${totalDispensar}</strong> comprimidos.<br>
+    <em>${mensagemCategoria}</em>
   `;
 }
